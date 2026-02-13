@@ -2,6 +2,14 @@
 import {Image} from 'astro:assets'
 
 import m1 from '../../assets/images/m1.png'
+import mMoney from '../../assets/images/m-money.jpg'
+import mMoney2 from '../../assets/images/m-money1.jpg'
+import mTest from '../../assets/images/m-test.jpg'
+import mTest2 from '../../assets/images/m-test1.jpg'
+import mWoman from '../../assets/images/m-woman.jpg'
+import m4 from '../../assets/images/m4.jpg'
+import m5 from '../../assets/images/m5.jpg'
+import m6 from '../../assets/images/m6.jpg'
 ---
 
 <section class="ourModel section-container">
@@ -22,8 +30,9 @@ import m1 from '../../assets/images/m1.png'
           <p>Tu trabajo tiene valor. Tu pasión también. Cada Asesora de Ventas gana entre el 25% y el 30% de descuento por cada venta realizada. Esto no solo representa ingresos reales: cada venta es una oportunidad de llevar salud, bienestar y energía a más personas. Tú construyes tu cartera de clientes, planificas tus metas y nosotros premiamos tu compromiso con ganancias inmediatas.</p>
         </div>
         <div class="picture">
+        <div class="overlay"></div>
           <Image 
-            src={m1} 
+            src={mMoney2} 
             alt="Hero image" 
             width={600} 
             class="card-img" 
@@ -32,8 +41,9 @@ import m1 from '../../assets/images/m1.png'
       </div>
       <div class="row">
         <div class="picture">
+        <div class="overlay"></div>
           <Image 
-            src={m1} 
+            src={mTest} 
             alt="Hero image" 
             width={600} 
             class="card-img" 
@@ -58,8 +68,9 @@ import m1 from '../../assets/images/m1.png'
           <p>Inspira y Gana Cuando inspiras, también ganas. Invita a más personas a unirse a esta gran oportunidad y recibe un bono f ijo por cada nuevo integrante que forme parte de nuestra comunidad térbol I Inspira. Cada incorporación es una historia que comienza a transformarse gracias a ti. Inspirar a alguien a emprender es sembrar libertad.</p>
         </div>
         <div class="picture">
+        <div class="overlay"></div>
           <Image 
-            src={m1} 
+            src={mWoman} 
             alt="Hero image" 
             width={600} 
             class="card-img" 
@@ -68,8 +79,9 @@ import m1 from '../../assets/images/m1.png'
       </div>
       <div class="row">
         <div class="picture">
+        <div class="overlay"></div>
           <Image 
-            src={m1} 
+            src={m4} 
             alt="Hero image" 
             width={600} 
             class="card-img" 
@@ -94,8 +106,9 @@ import m1 from '../../assets/images/m1.png'
           <p>El mejor liderazgo es el que inspira a otros a liderar. Cuando una Líder acompaña y forma a nuevas líderes, recibe un bono único por este gran logro. Porque formar líderes es dejar huellas que trascienden generaciones. Inspirar a alguien a liderar su propio negocio es uno de los mayores actos de impacto en la sociedad.</p>
         </div>
         <div class="picture">
+        <div class="overlay"></div>
           <Image 
-            src={m1} 
+            src={m5} 
             alt="Hero image" 
             width={600} 
             class="card-img" 
@@ -103,9 +116,11 @@ import m1 from '../../assets/images/m1.png'
         </div>
       </div>
       <div class="row">
+
         <div class="picture">
+        <div class="overlay"></div>
           <Image 
-            src={m1} 
+            src={m6} 
             alt="Hero image" 
             width={600} 
             class="card-img" 
@@ -192,6 +207,18 @@ h4 {
   border-radius: 6px;
   overflow: hidden;
   aspect-ratio: 5/3;
+  position: relative;
+}
+  .overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, .6) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, .0) 100%
+  );
 }
 
   .card-img {
