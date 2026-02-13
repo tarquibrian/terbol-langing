@@ -1,0 +1,27 @@
+<div class="capsule">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <circle cx="4" cy="4" r="4" fill="#6F8192"/>
+        </svg>
+        <slot />
+      </div>
+
+<style>
+.capsule {
+    font-family: "Roboto Mono";
+    text-transform: uppercase;
+    display: flex;
+    padding: 2px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 100px;
+    background: var(--Primary-soft-gray, #F5F2F0);
+
+    color: var(--Text-blue-400, #6F8192);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+  }
+</style>

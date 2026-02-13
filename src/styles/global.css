@@ -1,0 +1,140 @@
+@import './fonts.css';
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+
+  /* COLORES PRIMARIOS */
+  --color-orange: #FF6C10;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-soft-gray: #F5F2F0;
+  --color-light-gray: #C8C8C7;
+  --color-dark-gray: #717273;
+
+  --font-main: 'Roboto', system-ui, sans-serif;
+  --main-container-width: 1512px;
+  --section-container-width: 1512px;
+  --container-width: 1200px;
+
+
+  /* Color styles */
+  --text-blue-50: rgba(237, 239, 241, 1);
+  --text-blue-100: rgba(199, 206, 213, 1);
+  --text-blue-200: rgba(172, 182, 192, 1);
+  --text-blue-300: rgba(134, 149, 164, 1);
+  --text-blue-400: rgba(111, 129, 146, 1);
+  --text-blue-500: rgba(75, 97, 119, 1);
+  --text-blue-600: rgba(68, 88, 108, 1);
+  --text-blue-700: rgba(53, 69, 84, 1);
+  --text-blue-800: rgba(41, 53, 65, 1);
+  --text-blue-900: rgba(32, 41, 50, 1);
+  --primary-orange: rgba(255, 108, 16, 1);
+  --primary-white: rgba(255, 255, 255, 1);
+  --primary-black: rgba(0, 0, 0, 1);
+  --primary-light-gray: rgba(200, 200, 199, 1);
+  --primary-soft-gray: rgba(245, 242, 240, 1);
+  --primary-dark-gray: rgba(113, 114, 115, 1);
+  --secondary-red: rgba(245, 67, 110, 1);
+  --secondary-cyan: rgba(28, 202, 212, 1);
+  --secondary-green: rgba(146, 213, 0, 1);
+  --secondary-yellow: rgba(253, 227, 0, 1);
+  --grey-50: rgba(237, 237, 237, 1);
+  --grey-100: rgba(199, 199, 199, 1);
+  --grey-200: rgba(172, 172, 172, 1);
+  --grey-300: rgba(134, 134, 134, 1);
+  --grey-400: rgba(110, 110, 110, 1);
+  --grey-500: rgba(74, 74, 74, 1);
+  --grey-600: rgba(67, 67, 67, 1);
+  --grey-700: rgba(53, 53, 53, 1);
+  --grey-800: rgba(41, 41, 41, 1);
+  --grey-900: rgba(31, 31, 31, 1);
+  --orange-orange-50: rgba(255, 240, 231, 1);
+  --orange-orange-100: rgba(255, 209, 181, 1);
+  --orange-orange-200: rgba(255, 187, 145, 1);
+  --orange-orange-300: rgba(255, 157, 95, 1);
+  --orange-orange-400: rgba(255, 137, 64, 1);
+  --orange-orange-500: rgba(255, 108, 16, 1);
+  --orange-orange-600: rgba(232, 98, 15, 1);
+  --orange-orange-700: rgba(181, 77, 11, 1);
+  --orange-orange-800: rgba(140, 59, 9, 1);
+  --orange-orange-900: rgba(107, 45, 7, 1);
+
+  --font--h1: clamp(100px, 8vw, 1vw);
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--text-blue-700);
+  font-family: var(--font-main);
+  line-height: 1.4;
+  font-size: 18px;
+}
+
+.section-container {
+  width: 100%;
+}
+
+.container {
+  max-width: var(--main-container-width);
+  margin: 0 auto;
+  padding: 96px 64px;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar-container {
+  max-width: var(--main-container-width);
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--text-blue-900);
+}
+
+a {
+  color: var(--text-blue-900);
+}
+
+p {
+  font-size: clamp(15px, 2vw, 18px);
+}
+
+h2 {
+  font-size: clamp(32px, 6vw, 50px);
+  line-height: 1.1;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 96px 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 64px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 48px 24px;
+  }
+}

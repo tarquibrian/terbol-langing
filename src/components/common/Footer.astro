@@ -1,0 +1,52 @@
+---
+import logoTerbol from '../../assets/logo.svg'
+---
+<footer class="section-container">
+  <div class="container">
+    <div class="top">
+      <div class="logo">
+        <img src={logoTerbol.src} width="200" height="33" alt="Logo de Terbol" />
+        <p>Una iniciativa de Térbol</p>
+      </div>
+      <p>Los productos mencionados son suplementos dietarios. Antes de consumir cualquier suplemento, consulte a su médico o profesional de la salud.</p>
+    </div>
+    <div class="line"></div>
+    <div class="bottom">
+      <p>© 2026 Térbol Inspira. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--primary-soft-gray);
+    margin-top: 90px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-block: 48px;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-blue-600);
+    font-weight: 400;
+  }
+  p {
+    text-align: center;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .line {
+    height: 1px;
+    width: 100%;
+    background: var(--primary-light-gray);
+  }
+</style>

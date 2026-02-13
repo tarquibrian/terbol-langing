@@ -1,0 +1,152 @@
+---
+import {Image} from 'astro:assets'
+import f1 from '../../assets/images/f1.png'
+import f2 from '../../assets/images/f2.png'
+import f3 from '../../assets/images/f3.png'
+
+---
+
+<section class="features section-container">
+  <div class="container">
+    <div class="top">
+      <div class="title">
+        <div class="top-label">
+          <span>
+NUESTRAS FORMULAS 
+          </span>
+          <div class="line"></div>
+        </div>
+        <h2>Productos con vitaminas y nutracéuticos que hacen la diferencia</h2>
+      </div>
+      <div class="desc">
+        <p>Nuestros productos son pensados para personas que valoran su salud y buscan opciones confiables, bien fundamentadas y de calidad superior.</p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <Image 
+          src={f2} 
+          alt="Hero image" 
+          width={300} 
+          class="card-img" 
+        />
+        <h5>Formulaciones diferenciadas</h5>
+        <p>Productos diferenciados diseñados específicamente para resultados medibles.</p>
+      </div>
+
+      <div class="card">
+        <Image 
+          src={f1} 
+          alt="Hero image" 
+          width={300} 
+          class="card-img" 
+        />
+        <h5>Respaldo científico</h5>
+        <p>Cada formulación está desarrollada con evidencia de laboratorio y estudios rigurosos.</p>
+      </div>
+      <div class="card">
+        <Image 
+          src={f3} 
+          alt="Hero image" 
+          width={300} 
+          class="card-img" 
+        />
+        <h5>Alta gama</h5>
+        <p>Cada formulación está desarrollada con evidencia de laboratorio y estudios rigurosos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+.top-label {
+    font-family: "Roboto Mono";
+    width: 60%;
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+    gap: 8px;
+    color: var(--grey-300);
+  }
+
+.top-label .line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-light-gray);
+  }
+
+  .top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    align-items: end;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    position: relative;
+    aspect-ratio: 7/5;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+    flex-direction: column;
+    padding: 24px;
+    gap: 8px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -9;
+  }
+
+  .card h5 {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .card p {
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  @media (max-width: 1200px) {
+    .top {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

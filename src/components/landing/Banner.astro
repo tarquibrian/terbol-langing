@@ -1,0 +1,115 @@
+---
+import Button from '../common/Button.astro'
+import {Image} from 'astro:assets'
+import bannerImg from '../../assets/images/b1.png'
+---
+
+<section class="banner section-container">
+  <div class="container">
+    <div class="banner-container">
+    <div class="content">
+      <div class="title">
+      <div class="top-label">Únete a nuestro equipo</div>
+      <h3>
+Inspira tu camino hacia el bienestar
+</h3>
+<p>Sumate a una comunidad que cree en tu potencial y forma parte de la red de asesores de térbolI Inspira donde tu crecimiento personal y profesional van de la mano. </p>
+<p>Este es tu momento para inspirar, crecer y transformar tu vida.</p>
+      </div>
+      <Button variant="primary" size="md" class="full">REGISTRARSE COMO PROMOTORA</Button>
+      <Button variant="primary" size="sm" class="compact">REGISTRO PROMOTORA</Button>
+      <!-- <div>+5491100000000 | contacto@terbolinspira.com</div> -->
+    </div>
+    <div class="picture">
+      <Image 
+        src={bannerImg} 
+        alt="Hero image" 
+        width={700} 
+        class="card-img" 
+      />
+    </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .compact {
+    display: none;
+  }
+  h3 {
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 600;
+    color: var(--primary-white);
+    line-height: 1.2;
+  }
+
+  .banner-container {
+    background: var(--primary-black);
+    color: var(--primary-white);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 64px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction:  column;
+    align-items: start;
+    justify-content: center;
+    gap: 32px;
+    min-width: 480px;
+    /* width: 50%; */
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+.top-label {
+    font-family: "Roboto Mono";
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--primary-white);
+    text-transform: uppercase;
+  }
+
+
+  @media (max-width: 768px) {
+    .content {
+      min-width: inherit;
+    }
+    .banner-container {
+      flex-direction: column;
+      height: 900px;
+      padding-inline: 48px;
+    }
+
+    .compact {
+      display: flex;
+    }
+
+    .full {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner-container {
+      padding: 32px;
+    }
+
+    .picture {
+      /* display: none; */
+    }
+
+    .compact {
+      width: 100%;
+    }
+  }
+
+</style>
+
+
