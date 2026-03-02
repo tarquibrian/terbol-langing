@@ -1,5 +1,15 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// -----------------------------------------------------------------------------
+// index.astro
+//
+// Página de aterrizaje principal que ensambla el layout global y las secciones
+// de contenido definidas en /src/components/landing. Cada componente tiene
+// documentación en su cabecera. No recibe props; se renderiza estáticamente.
+//
+// Autor: Giro54
+// Fecha: 2026-03-02
+// -----------------------------------------------------------------------------
+
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/common/Navbar.astro'
 import Hero from '../components/landing/Hero.astro'
@@ -24,5 +34,4 @@ import Footer from '../components/common/Footer.astro'
   </main>
 
   <Footer />
-	<!-- <Welcome /> -->
 </Layout>
