@@ -1,8 +1,39 @@
 ---
+// Features.astro
+
+// Sección en la landing que lista tres características clave del producto/servicio
+// con icono de check. Usada en la página principal.
+
 import {Image} from 'astro:assets'
 import f1 from '../../assets/images/f1.png'
 import f2 from '../../assets/images/f2.png'
 import f3 from '../../assets/images/f3.png'
+
+const {
+  label = "NUESTRAS FÓRMULAS",
+  title = "Productos con vitaminas y nutracéuticos que hacen la diferencia",
+  description = "Nuestros productos son pensados para personas que valoran su salud y buscan opciones confiables, bien fundamentadas y de calidad superior.",
+  features = [
+    {
+      image: f2,
+      imageAlt: "Formulaciones diferenciadas",
+      title: "Formulaciones diferenciadas",
+      description: "Productos diferenciados diseñados específicamente para resultados medibles.",
+    },
+    {
+      image: f1,
+      imageAlt: "Respaldo científico",
+      title: "Respaldo científico",
+      description: "Cada formulación está desarrollada con evidencia de laboratorio y estudios rigurosos.",
+    },
+    {
+      image: f3,
+      imageAlt: "Alta gama",
+      title: "Alta gama",
+      description: "Calidad superior en cada producto, elaborada con los más altos estándares.",
+    },
+  ],
+} = Astro.props;
 
 ---
 
@@ -12,49 +43,29 @@ import f3 from '../../assets/images/f3.png'
       <div class="title">
         <div class="top-label">
           <span>
-NUESTRAS FORMULAS 
+{label} 
           </span>
           <div class="line"></div>
         </div>
-        <h2>Productos con vitaminas y nutracéuticos que hacen la diferencia</h2>
-        <!-- <h2>NUESTRAS FORMULAS</h2> -->
+        <h2>{title}</h2>
       </div>
       <div class="desc">
-        <p>Nuestros productos son pensados para personas que valoran su salud y buscan opciones confiables, bien fundamentadas y de calidad superior.</p>
+        <p>{description}</p>
       </div>
     </div>
     <div class="content">
-      <div class="card">
-        <Image 
-          src={f2} 
-          alt="Hero image" 
-          width={300} 
-          class="card-img" 
-        />
-        <h5>Formulaciones diferenciadas</h5>
-        <p>Productos diferenciados diseñados específicamente para resultados medibles.</p>
-      </div>
-
-      <div class="card">
-        <Image 
-          src={f1} 
-          alt="Hero image" 
-          width={300} 
-          class="card-img" 
-        />
-        <h5>Respaldo científico</h5>
-        <p>Cada formulación está desarrollada con evidencia de laboratorio y estudios rigurosos.</p>
-      </div>
-      <div class="card">
-        <Image 
-          src={f3} 
-          alt="Hero image" 
-          width={300} 
-          class="card-img" 
-        />
-        <h5>Alta gama</h5>
-        <p>Cada formulación está desarrollada con evidencia de laboratorio y estudios rigurosos.</p>
-      </div>
+      {features.map((feature: any) => (
+        <div class="card">
+          <Image 
+            src={feature.image} 
+            alt={feature.imageAlt} 
+            width={300} 
+            class="card-img" 
+          />
+          <h5>{feature.title}</h5>
+          <p>{feature.description}</p>
+        </div>
+      ))}
     </div>
   </div>
 </section>

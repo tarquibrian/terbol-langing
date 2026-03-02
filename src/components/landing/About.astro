@@ -1,81 +1,86 @@
 ---
-import Button from '../common/Button.astro'
+// About.astro
+//
+// Sección informativa sobre la misión/propósito de Térbol Inspira. Incluye
+// texto explicativo y puede incluir imagen de acompañamiento.
+//
+// Props:
+//   - label: Etiqueta superior (default: "QUIÉNES SOMOS")
+//   - title: Título principal de la sección
+//   - description: Descripción principal
+//   - secondaryDescription: Descripción secundaria (opcional)
+//   - buttonText: Texto del botón
+//   - buttonHref: URL del botón
+//   - features: Array de características a mostrar
+// -----------------------------------------------------------------------------
+
+import Button from "../common/Button.astro";
+import FeatureCard from "../common/FeatureCard.astro";
+import IconPassion from "../icons/IconPassion.astro";
+import IconQuality from "../icons/IconQuality.astro";
+import IconRespect from "../icons/IconRespect.astro";
+import IconPurpose from "../icons/IconPurpose.astro";
+
+const {
+  label = "QUIÉNES SOMOS",
+  title = "Tu bienestar es nuestra prioridad",
+  description = "Durante más de 40 años, <b>térbol</b> ha cultivado un legado basado en la ciencia, la excelencia y un propósito claro: mejorar la vida de las personas. Hoy, ese mismo espíritu evoluciona con <b>Térbol Inspira</b>, una propuesta creada para acompañarte en un camino de bienestar real.",
+  secondaryDescription = "Cada avance, cada innovación y cada producto reflejan nuestra convicción: el equilibrio es la forma más auténtica de transformar la vida.",
+  buttonText = "VER CATÁLOGO",
+  buttonHref = "https://terbol.com.bo/#",
+  features = [
+    {
+      title: "Pasión",
+      description: "Trabajamos con pasión por la salud y el bienestar de las personas.",
+      icon: IconPassion,
+    },
+    {
+      title: "Calidad",
+      description: "En todos nuestros procesos, productos y servicios.",
+      icon: IconQuality,
+    },
+    {
+      title: "Respeto",
+      description: "Es el principal componente de nuestro entorno laboral.",
+      icon: IconRespect,
+    },
+    {
+      title: "Propósito",
+      description: "Brindar salud y bienestar a la vida.",
+      icon: IconPurpose,
+    },
+  ],
+} = Astro.props;
 ---
 
 <section class="about section-container">
-    <div class="container">
-      <div class="content">
-        <div class="top-label">
-          <span>
-            QUIÉNES SOMOS
-          </span>
-          <div class="line"></div>
-        </div>
-        <h2>Tu bienestar es nuestra prioridad</h2>
-        <p>Durante más de 40 años, <b> térbol</b> ha cultivado un legado basado en la ciencia, la excelencia y un propósito claro: mejorar la vida de las personas.
-        Hoy, ese mismo espíritu evoluciona con <b> térbol l Inspira</b>, una propuesta creada para acompañarte en un camino de bienestar real.</p>
-        <p>Cada avance, cada innovación y cada producto reflejan nuestra convicción:
-el equilibrio es la forma más auténtica de transformar la vida.
-</p>
-
-<Button 
-      variant="secondary" 
-      size="sm" 
-      href="https://terbol.com.bo/#"
-      target="_blank" 
-      rel="noopener noreferrer"
-      >VER CATALOGO</Button>
-
+  <div class="container">
+    <div class="content">
+      <div class="top-label">
+        <span>{label}</span>
+        <div class="line"></div>
       </div>
+      <h2>{title}</h2>
+      <p set:html={description} />
+      {secondaryDescription && <p>{secondaryDescription}</p>}
 
-      <div class="cards-container">
-        <div class="card">
-          <div class="icon">
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M5.33398 25.3333C5.33404 22.3658 6.23423 19.4682 7.91567 17.023C9.59711 14.5779 11.9807 12.7004 14.7516 11.6383C17.5225 10.5763 20.5504 10.3798 23.4353 11.0747C26.3203 11.7697 28.9266 13.3234 30.91 15.5306C31.0497 15.68 31.2186 15.7991 31.4062 15.8805C31.5938 15.9619 31.7961 16.0039 32.0006 16.0039C32.2052 16.0039 32.4075 15.9619 32.5951 15.8805C32.7827 15.7991 32.9516 15.68 33.0913 15.5306C35.0685 13.309 37.6754 11.7423 40.565 11.0389C43.4546 10.3355 46.49 10.5289 49.267 11.5932C52.044 12.6576 54.431 14.5425 56.1103 16.997C57.7896 19.4515 58.6815 22.3593 58.6673 25.3333C58.6673 31.4399 54.6673 35.9999 50.6673 39.9999L36.022 54.1679C35.5251 54.7386 34.9125 55.197 34.2248 55.5127C33.5371 55.8284 32.7901 55.9942 32.0334 55.999C31.2767 56.0038 30.5277 55.8475 29.8361 55.5405C29.1445 55.2336 28.5261 54.783 28.022 54.2186L13.334 39.9999C9.33398 35.9999 5.33398 31.4666 5.33398 25.3333Z" stroke="#FF6C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8.58594 34.6667H25.3326L26.6659 32L31.9993 44L37.3326 25.3334L41.3326 34.6667H55.3859" stroke="#FF6C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
+      <Button
+        variant="secondary"
+        size="sm"
+        href={buttonHref}
+        target="_blank"
+        rel="noopener noreferrer">{buttonText}</Button
+      >
+    </div>
 
-          </div>
-          <h4>Pasión</h4>
-          <p>Trabajamos con pasión por la salud y el bienestar de las personas.</p>
-        </div>
-        <div class="card">
-          <div class="icon">
-
-  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M30.7333 6.12C30.8502 5.8839 31.0307 5.68515 31.2545 5.5462C31.4783 5.40725 31.7365 5.33362 32 5.33362C32.2634 5.33362 32.5216 5.40725 32.7454 5.5462C32.9692 5.68515 33.1498 5.8839 33.2666 6.12L39.4266 18.5973C39.8324 19.4186 40.4315 20.1291 41.1723 20.6679C41.9131 21.2067 42.7736 21.5576 43.68 21.6907L57.456 23.7067C57.717 23.7445 57.9622 23.8546 58.1639 24.0245C58.3656 24.1945 58.5158 24.4175 58.5973 24.6683C58.6789 24.9191 58.6887 25.1877 58.6255 25.4438C58.5624 25.6999 58.4288 25.9332 58.24 26.1173L48.2773 35.8187C47.6203 36.4589 47.1287 37.2493 46.8448 38.1217C46.561 38.9941 46.4934 39.9224 46.648 40.8267L49 54.5333C49.046 54.7942 49.0178 55.0628 48.9186 55.3085C48.8194 55.5541 48.6531 55.767 48.4387 55.9227C48.2244 56.0783 47.9706 56.1707 47.7063 56.189C47.442 56.2074 47.1778 56.1512 46.944 56.0267L34.6293 49.552C33.8179 49.1259 32.9151 48.9033 31.9986 48.9033C31.0821 48.9033 30.1794 49.1259 29.368 49.552L17.056 56.0267C16.8222 56.1504 16.5583 56.2061 16.2945 56.1873C16.0306 56.1686 15.7773 56.0762 15.5634 55.9206C15.3495 55.765 15.1835 55.5525 15.0844 55.3073C14.9852 55.062 14.9569 54.7939 15.0026 54.5333L17.352 40.8293C17.5071 39.9246 17.4399 38.9957 17.1561 38.1228C16.8722 37.2499 16.3802 36.4591 15.7226 35.8187L5.75996 26.12C5.56954 25.9361 5.43461 25.7024 5.37052 25.4455C5.30644 25.1887 5.31579 24.919 5.3975 24.6672C5.47921 24.4154 5.63 24.1916 5.8327 24.0213C6.03539 23.851 6.28183 23.7411 6.54396 23.704L20.3173 21.6907C21.2246 21.5587 22.0863 21.2082 22.8282 20.6693C23.57 20.1304 24.1698 19.4194 24.576 18.5973L30.7333 6.12Z" stroke="#FF6C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-          </div>
-          <h4>Calidad</h4>
-          <p>En todos nuestros procesos, productos y servicios.</p>
-        </div>
-        <div class="card">
-          <div class="icon">
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M51.7713 38.4374C56.0006 34.2081 58.6673 30.6667 58.6673 25.3334C58.6673 22.3659 57.7671 19.4683 56.0856 17.0232C54.4042 14.578 52.0206 12.7005 49.2497 11.6385C46.4788 10.5764 43.4509 10.3799 40.5659 11.0748C37.681 11.7698 35.0747 13.3235 33.0913 15.5307M51.7713 38.4374C51.2454 38.9634 50.6209 39.3807 49.9337 39.6654C49.2464 39.9501 48.5099 40.0966 47.766 40.0966C47.0221 40.0966 46.2855 39.9501 45.5983 39.6654C44.911 39.3807 44.2866 38.9634 43.7606 38.4374C44.3301 38.9523 44.7889 39.5777 45.1093 40.2754C45.4296 40.9732 45.6047 41.7287 45.624 42.4963C45.6433 43.2638 45.5063 44.0272 45.2214 44.7401C44.9366 45.4531 44.5097 46.1007 43.9668 46.6436C43.4239 47.1864 42.7763 47.6133 42.0634 47.8982C41.3504 48.183 40.587 48.32 39.8195 48.3007C39.052 48.2814 38.2964 48.1063 37.5987 47.786C36.9009 47.4657 36.2756 47.0069 35.7606 46.4374C36.2871 46.9617 36.7049 47.5847 36.9904 48.2707C37.2759 48.9567 37.4233 49.6922 37.4243 50.4352C37.4253 51.1782 37.2798 51.9141 36.9962 52.6008C36.7125 53.2876 36.2963 53.9116 35.7713 54.4374C35.2646 54.9443 34.6609 55.3438 33.9963 55.6122C33.3317 55.8805 32.6198 56.0121 31.9032 55.9992C31.1866 55.9863 30.4799 55.829 29.8254 55.5368C29.171 55.2447 28.5821 54.8236 28.094 54.2987L13.334 40.0001C9.33398 36.0001 5.33398 31.4667 5.33398 25.3334C5.33458 22.3662 6.23516 19.4689 7.91681 17.0242C9.59845 14.5795 11.9821 12.7023 14.7529 11.6406C17.5236 10.579 20.5513 10.3827 23.436 11.0777C26.3207 11.7727 28.9267 13.3263 30.91 15.5334C31.2065 15.809 31.5964 15.9619 32.0012 15.9614C32.4059 15.9609 32.7955 15.807 33.0913 15.5307M51.7713 38.4374C52.7712 37.4372 53.3328 36.0809 53.3328 34.6667C53.3328 33.2525 52.7712 31.8962 51.7713 30.8961L46.7553 25.8774C46.1585 25.2803 45.4499 24.8067 44.67 24.4835C43.8901 24.1604 43.0542 23.9941 42.21 23.9941C41.3658 23.9941 40.5299 24.1604 39.75 24.4835C38.9701 24.8067 38.2615 25.2803 37.6646 25.8774L33.1046 30.4374C32.1045 31.4372 30.7482 31.9989 29.334 31.9989C27.9198 31.9989 26.5635 31.4372 25.5633 30.4374C24.5635 29.4372 24.0018 28.0809 24.0018 26.6667C24.0018 25.2525 24.5635 23.8962 25.5633 22.8961L33.0913 15.5307" stroke="#FF6C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-
-          </div>
-          <h4>Respeto</h4>
-          <p>Es el principal componente de nuestro entorno laboral.</p>
-        </div>
-        <div class="card">
-          <div class="icon">
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M29.3333 37.3333H34.6667C36.0812 37.3333 37.4377 36.7714 38.4379 35.7712C39.4381 34.771 40 33.4144 40 32C40 30.5855 39.4381 29.2289 38.4379 28.2287C37.4377 27.2285 36.0812 26.6666 34.6667 26.6666H26.6667C25.0667 26.6666 23.7333 27.2 22.9333 28.2666L8 42.6666" stroke="#FF6C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M38.534 35.7066L52.0006 23.1893C53.8566 21.3333 56.0006 18.2666 56.0006 15.3333C56.001 13.8489 55.5508 12.3993 54.7097 11.1762C53.8686 9.95316 52.6761 9.01412 51.2899 8.48327C49.9037 7.95242 48.389 7.85475 46.946 8.20316C45.5031 8.55158 44.1999 9.32968 43.2086 10.4346C43.1397 10.5094 43.056 10.5692 42.9629 10.61C42.8697 10.6509 42.7691 10.672 42.6673 10.672C42.5656 10.672 42.465 10.6509 42.3718 10.61C42.2786 10.5692 42.1949 10.5094 42.126 10.4346C41.1347 9.32968 39.8315 8.55158 38.3886 8.20316C36.9457 7.85475 35.431 7.95242 34.0448 8.48327C32.6585 9.01412 31.466 9.95316 30.6249 11.1762C29.7838 12.3993 29.3336 13.8489 29.334 15.3333C29.334 18.5333 31.4727 21.3279 33.334 23.1893L42.6673 31.8666" stroke="#FF6C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M5.33398 40L21.334 56" stroke="#FF6C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M18.666 53.3334L22.9327 49.6C23.7327 48.5334 25.066 48 26.666 48H37.3327C40.266 48 42.9327 46.9334 44.7993 44.8L57.066 33.0667C58.0951 32.0942 58.6956 30.7528 58.7356 29.3376C58.7757 27.9223 58.2518 26.5491 57.2793 25.52C56.3069 24.491 54.9655 23.8904 53.5502 23.8504C52.1349 23.8104 50.7617 24.3342 49.7327 25.3067" stroke="#FF6C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-
-          </div>
-          <h4>Propósito</h4>
-          <p>Brindar salud y bienestar a la vida.</p>
-        </div>
-      </div>
-      </div>
-
+    <div class="cards-container">
+      {features.map((feature: any) => (
+        <FeatureCard title={feature.title} description={feature.description}>
+          <feature.icon slot="icon" />
+        </FeatureCard>
+      ))}
+    </div>
+  </div>
 </section>
 
 <style>
@@ -112,27 +117,10 @@ el equilibrio es la forma más auténtica de transformar la vida.
     gap: 24px;
   }
 
-  
-
   .cards-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 8px;
-    background: var(--color-soft-gray);
-    padding: 24px;
-    border-radius: 6px;
-  }
-
-  h4 {
-    font-size: 24px;
-    font-weight: 600;
   }
 
   @media (max-width: 1200px) {
@@ -149,6 +137,4 @@ el equilibrio es la forma más auténtica de transformar la vida.
       grid-template-columns: 1fr;
     }
   }
-
-
 </style>

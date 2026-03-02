@@ -1,94 +1,66 @@
 ---
-import {Image} from 'astro:assets'
-import Button from '../common/Button.astro'
+// -----------------------------------------------------------------------------
+// Products.astro
 
-import imgProduct1 from '../../assets/images/product1.png'
-import imgProduct2 from '../../assets/images/product2.png'
-import imgProduct3 from '../../assets/images/product3.png'
+// Lista de productos disponibles en el catálogo, cada uno con imagen, nombre y
+// descripción corta. Se presenta en la landing para mostrar la oferta.
 
+// -----------------------------------------------------------------------------
+
+import Button from "../common/Button.astro";
+import ProductCard from "../common/ProductCard.astro";
+
+import imgProduct1 from "../../assets/images/productOVAv.png";
+import imgProduct2 from "../../assets/images/productCOllagen.png";
+import imgProduct3 from "../../assets/images/productOVA.png";
+
+const products = [
+  {
+    label: "SUPLEMENTOS",
+    image: imgProduct1,
+    title: "OVA OVA ACTIVE X 250GR",
+    description: "Ayuda a mejorar la firmeza y elasticidad de la piel, cabello y uñas.",
+    price: "XX Bs.",
+    href: "https://terbol.com.bo/#",
+  },
+  {
+    label: "VITAMINAS",
+    image: imgProduct2,
+    title: "COLLAGEN CREAM",
+    description: "Atenúa manchas y ayuda a lograr un tono más uniforme.",
+    price: "XX Bs.",
+    href: "https://terbol.com.bo/#",
+  },
+  {
+    label: "SUPLEMENTOS",
+    image: imgProduct3,
+    title: "OVA OVA FLEX X 30 STICK",
+    description: "Mantenimiento de los huesos en condiciones normales.",
+    price: "XX Bs.",
+    href: "https://terbol.com.bo/#",
+  },
+];
 ---
+
 <section class="products section-container">
   <div class="container">
     <div class="top-label">NUESTROS PRODUCTOS</div>
     <div class="cards-container">
-      <div class="card">
-        <div class="over-label">SUPLEMENTOS</div>
-        <div class="picture">
-      <Image 
-        src={imgProduct1} 
-        alt="Hero image" 
-        width={300} 
-        class="card-img" 
-      />
-        </div>
-        <div class="card-content">
-          <h5>OVA OVA ACTIVE X 250GR</h5>
-          <p>Ayuda a mejorar la firmeza y elasticidad de la piel, cabello y uñas.</p>
-          <div class="card-footer">
-            <span class="price">XX Bs.</span>
-            <Button variant="primary" size='sm' noIcon>Comprar</Button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="over-label">VITAMINAS</div>
-        <div class="picture">
-
-      <Image 
-        src={imgProduct2} 
-        alt="Hero image" 
-        width={300} 
-        class="card-img" 
-      />
-        </div>
-        <div class="card-content">
-          <h5>COLLAGEN CREAM</h5>
-          <p>Atenúa manchas y ayuda a lograr un tono más uniforme.</p>
-          <div class="card-footer">
-            <span class="price">XX Bs.</span>
-            <Button variant="primary" size='sm' noIcon>Comprar</Button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="over-label">SUPLEMENTOS</div>
-        <div class="picture">
-
-      <Image 
-        src={imgProduct3} 
-        alt="Hero image" 
-        width={300} 
-        class="card-img" 
-      />
-        </div>
-        <div class="card-content">
-          <h5>OVA OVA FLEX X 30 STICK</h5>
-          <p>Mantenimiento de los huesos en condiciones normales.</p>
-          <div class="card-footer">
-            <span class="price">XX Bs.</span>
-            <Button variant="primary" size='sm' noIcon>Comprar</Button>
-          </div>
-        </div>
-      </div>
+      {products.map((product) => (
+        <ProductCard product={product} />
+      ))}
     </div>
-    <Button 
-      variant="terciary" 
-      size="sm" 
+    <Button
+      variant="terciary"
+      size="sm"
       href="https://terbol.com.bo/#"
-      target="_blank" 
-      rel="noopener noreferrer"
-      >VER CATALOGO</Button>
-
+      target="_blank"
+      rel="noopener noreferrer">VER CATALOGO</Button
+    >
   </div>
 </section>
 
 <style>
-   h5 {
-     font-size: 24px;
-     font-weight: 500;
-   }
-
   .container {
     display: flex;
     flex-direction: column;
@@ -96,7 +68,7 @@ import imgProduct3 from '../../assets/images/product3.png'
     justify-content: center;
     gap: 32px;
   }
-    .top-label {
+  .top-label {
     font-family: "Roboto Mono";
     width: 70%;
     font-size: 18px;
@@ -117,91 +89,9 @@ import imgProduct3 from '../../assets/images/product3.png'
     grid-template-rows: 1fr;
   }
 
-  .card {
-    padding: 24px;
-    background: var(--primary-soft-gray);
-    border-radius: 6px;
-    position: relative;
-    /* aspect-ratio: 4/5; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    overflow: hidden;
-    height: auto;
-  }
-
-  .over-label {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    background: #ffffff;
-    font-size: "Roboto Mono";
-    font-size: 15px;
-    font-weight: 400;
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
-
-  .picture {
-    /* max-height: 300px; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem;
-    display: flex;
-    height: 100%;
-  }
-
-  .card-img {
-    aspect-ratio: 3/3;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: end; */
-    gap: 8px;
-    height: 100%;
-  }
-
-  .card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-top: 8px;
-  }
-
-  .card-footer span {
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  @media (max-width: 1024px) {
-    .picture {
-      padding: 2rem;
-    }
-  }
-
   @media (max-width: 768px) {
     .cards-container {
       grid-template-columns: 1fr;
     }
   }
-
-  @media (max-width: 480px) {
-    .picture {
-      padding: 1rem;
-    }
-    .card-footer {
-      display: flex;
-      flex-direction: column;
-      align-items: initial;
-    }
-  }
-
 </style>

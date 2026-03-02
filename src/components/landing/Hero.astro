@@ -1,50 +1,76 @@
 ---
-import {Image} from 'astro:assets'
-import heroImage from '../../assets/images/heroimg.png'
-import Button from '../common/Button.astro'
-import Capsule from '../common/Capsule.astro'
-import CircleCheck from '../icons/CircleCheck.astro'
+// -----------------------------------------------------------------------------
+// Hero.astro
+//
+// Sección principal de la página de aterrizaje. Muestra título, texto
+// introductorio, botones de acción y características destacadas junto a una
+// imagen representativa (hero image). Usado en la página `src/pages/index.astro`.
+//
+// Props: ninguno. Todos los contenidos están embebidos estáticamente.
+// Dependencias:
+//   - <Button>    : componente de botón reutilizable
+//   - <Capsule>   : pequeño elemento estilizado para promocionar mensajes
+//   - <CircleCheck>: icono usado en la lista de características.
+//
+// -----------------------------------------------------------------------------
+
+import { Image } from "astro:assets";
+import heroImage from "../../assets/images/heroimg.png";
+import Button from "../common/Button.astro";
+import Capsule from "../common/Capsule.astro";
+import CircleCheck from "../icons/CircleCheck.astro";
+
+const {
+  capsuleText = "Nueva Línea Premium",
+  title = "Inspiramos bienestar, transformamos vidas",
+  description = "En un mundo que avanza con velocidad, elegimos el valor del equilibrio. Así nace térbol I Inspira: una invitación a vivir más y vivir mejor, desde la ciencia, la conciencia y la excelencia.",
+  buttonText = "REGISTRARME COMO PROMOTORA",
+  buttonHref = "https://terbol.com.bo/#",
+  features = [
+    { text: "Respaldo científico" },
+    { text: "Alta gama" },
+    { text: "Modelo B2C" },
+  ],
+  image = heroImage,
+  imageAlt = "Hero image",
+} = Astro.props;
 ---
+
 <section class="hero section-container">
   <div class="container">
     <div class="content">
-      <Capsule>Nueva Línea Premium</Capsule>
-      <h1>
-        Inspiramos bienestar, transformamos vidas
-      </h1>
-      <p>En un mundo que avanza con velocidad, elegimos el valor del equilibrio.
-Así nace térbol I Inspira: una invitación a vivir más y vivir mejor, desde la ciencia, la conciencia y la excelencia.</p>
+      <Capsule>{capsuleText}</Capsule>
+      <h1 set:html={title} />
+      <p set:html={description} />
 
-      <Button variant='primary' size='md' class='full'>REGISTRARME COMO PROMOTORA</Button>
-      <Button variant='primary' size='sm' class='compact'>REGISTRARME COMO PROMOTORA</Button>
+      <Button
+        variant="primary"
+        size="md"
+        class="full"
+        href={buttonHref}
+        target="_blank"
+        rel="noopener noreferrer">{buttonText}</Button
+      >
+      <Button variant="primary" size="sm" class="compact" href={buttonHref}
+        >{buttonText}</Button
+      >
       <div class="features">
-        <div class="feature">
-          <CircleCheck/>
-          Respaldo científico
-        </div>
-        <div class="feature">
-          <CircleCheck/>
-          Alta gama
-        </div><div class="feature">
-          <CircleCheck/>
-          Modelo B2C
-        </div>
+        {features.map((feature: any) => (
+          <div class="feature">
+            <CircleCheck />
+            {feature.text}
+          </div>
+        ))}
       </div>
     </div>
 
     <div class="picture">
-      <Image 
-        src={heroImage} 
-        alt="Hero image" 
-        width={800} 
-        class="hero-img" 
-      />
+      <Image src={image} alt={imageAlt} width={800} class="hero-img" />
     </div>
   </div>
 </section>
 
 <style>
-
   .hero {
     padding-top: 100px;
   }
@@ -73,7 +99,7 @@ Así nace térbol I Inspira: una invitación a vivir más y vivir mejor, desde l
     font-size: clamp(40px, 6vw, 80px);
     font-style: normal;
     font-weight: 700;
-    line-height: 100%; 
+    line-height: 100%;
   }
 
   .content p {
@@ -121,7 +147,7 @@ Así nace térbol I Inspira: una invitación a vivir más y vivir mejor, desde l
 
   @media (max-width: 1024px) {
     .container {
-    flex-direction: column;
+      flex-direction: column;
     }
 
     .content {
@@ -152,7 +178,5 @@ Así nace térbol I Inspira: una invitación a vivir más y vivir mejor, desde l
     .full {
       display: none;
     }
-
   }
-
 </style>

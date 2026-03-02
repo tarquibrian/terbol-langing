@@ -1,12 +1,69 @@
 ---
-import {Image} from 'astro:assets'
+// OurModel.astro
 
-import mMoney2 from '../../assets/images/m-money1.jpg'
-import mTest from '../../assets/images/m-test.jpg'
-import mWoman from '../../assets/images/m-woman.jpg'
-import m4 from '../../assets/images/m4.jpg'
-import m5 from '../../assets/images/m5.jpg'
-import m6 from '../../assets/images/m6.jpg'
+// Describe el modelo de negocio (por ejemplo B2C) usado por la marca, con
+// texto y/o iconografía. Aparece en la landing para educar a potenciales
+// promotoras/usuarios.
+
+import Step from "../common/Step.astro";
+
+import mMoney2 from "../../assets/images/m-money1.jpg";
+import mTest from "../../assets/images/m-test.jpg";
+import mWoman from "../../assets/images/m-woman.jpg";
+import m4 from "../../assets/images/m4.jpg";
+import m5 from "../../assets/images/m5.jpg";
+import m6 from "../../assets/images/m6.jpg";
+
+const steps = [
+  {
+    number: 1,
+    title: "Ganancias asesoras de ventas independientes",
+    description:
+      "Tu trabajo tiene valor. Tu pasión también. Cada Asesora de Ventas gana entre el 25% y el 30% de descuento por cada venta realizada. Esto no solo representa ingresos reales: cada venta es una oportunidad de llevar salud, bienestar y energía a más personas. Tú construyes tu cartera de clientes, planificas tus metas y nosotros premiamos tu compromiso con ganancias inmediatas.",
+    image: mMoney2,
+    reverse: false,
+  },
+  {
+    number: 2,
+    title: "Varas Inspira +",
+    description:
+      "La clave está en la perseverancia. Realiza pedidos cada mes y recibe bonificaciones e incentivos diferenciados por tu constancia. En térbol I Inspira valoramos a quienes cultivan relaciones duraderas, acompañan a sus clientes y mantienen vivo el vínculo. Tu compromiso merece ser reconocido.",
+    image: mTest,
+    reverse: true,
+  },
+  {
+    number: 3,
+    title: "Bono por incorporación:",
+    description:
+      "Inspira y Gana Cuando inspiras, también ganas. Invita a más personas a unirse a esta gran oportunidad y recibe un bono f ijo por cada nuevo integrante que forme parte de nuestra comunidad térbol I Inspira. Cada incorporación es una historia que comienza a transformarse gracias a ti. Inspirar a alguien a emprender es sembrar libertad.",
+    image: mWoman,
+    reverse: false,
+  },
+  {
+    number: 4,
+    title: "Bono de crecimiento:",
+    description:
+      "Inspira y Crece Inspirar es el primer paso. Formar, el segundo Al construir tu equipo de ventas y ayudarlo a crecer, recibes el 2% de la venta neta comisionable de tu red directa. Esto no es solo un bono: es el resultado de crear una red sólida, activa y comprometida. Cuando tu equipo crece, tú también creces.",
+    image: m4,
+    reverse: true,
+  },
+  {
+    number: 5,
+    title: "Bono de Líder en formación:",
+    description:
+      "El mejor liderazgo es el que inspira a otros a liderar. Cuando una Líder acompaña y forma a nuevas líderes, recibe un bono único por este gran logro. Porque formar líderes es dejar huellas que trascienden generaciones. Inspirar a alguien a liderar su propio negocio es uno de los mayores actos de impacto en la sociedad.",
+    image: m5,
+    reverse: false,
+  },
+  {
+    number: 6,
+    title: "Bono de Liderazgo:",
+    description:
+      "Consolidas tu liderazgo, multiplicas tu impacto. Al convertirte en Líder, guiando, acompañando y desarrollando una red directa fuerte, accedes a un 10% de la venta neta comisionable de toda tu red directa. Tu ejemplo motiva. Tu liderazgo transforma. Y en Térbol - Inspira, celebramos ese camino con reconocimiento y crecimiento.",
+    image: m6,
+    reverse: true,
+  },
+];
 ---
 
 <section class="ourModel section-container">
@@ -14,124 +71,23 @@ import m6 from '../../assets/images/m6.jpg'
     <div class="top">
       <div class="top-label">NUESTRO MODELO DE NEGOCIO</div>
       <h2>¡Inspírate! Porque hay seis formas de ganar</h2>
-      <p><b>En térbol Inspira</b>, creemos que el verdadero progreso nace del      reconocimiento. Cada logro se celebra. Cada paso cuenta.</p>
+      <p>
+        <b>En térbol Inspira</b>, creemos que el verdadero progreso nace del
+        reconocimiento. Cada logro se celebra. Cada paso cuenta.
+      </p>
     </div>
     <div class="content">
-      <div class="row">
-        <div class="column">
-          <div class="step-label">
-            1
-            <div class="line"></div>
-          </div>
-          <h4>Ganancias asesoras de ventas independientes</h4>
-          <p>Tu trabajo tiene valor. Tu pasión también. Cada Asesora de Ventas gana entre el 25% y el 30% de descuento por cada venta realizada. Esto no solo representa ingresos reales: cada venta es una oportunidad de llevar salud, bienestar y energía a más personas. Tú construyes tu cartera de clientes, planificas tus metas y nosotros premiamos tu compromiso con ganancias inmediatas.</p>
-        </div>
-        <div class="picture">
-        <div class="overlay"></div>
-          <Image 
-            src={mMoney2} 
-            alt="Hero image" 
-            width={600} 
-            class="card-img" 
+      {
+        steps.map((step) => (
+          <Step
+            number={step.number}
+            title={step.title}
+            description={step.description}
+            image={step.image}
+            reverse={step.reverse}
           />
-        </div>
-      </div>
-      <div class="row">
-        <div class="picture">
-        <div class="overlay"></div>
-          <Image 
-            src={mTest} 
-            alt="Hero image" 
-            width={600} 
-            class="card-img" 
-          />
-        </div>
-        <div class="column">
-          <div class="step-label">
-            2
-            <div class="line"></div>
-          </div>
-          <h4>Varas Inspira +</h4>
-          <p>La clave está en la perseverancia. Realiza pedidos cada mes y recibe bonificaciones e incentivos diferenciados por tu constancia. En térbol I Inspira valoramos a quienes cultivan relaciones duraderas, acompañan a sus clientes y mantienen vivo el vínculo. Tu compromiso merece ser reconocido.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column">
-          <div class="step-label">
-            3
-            <div class="line"></div>
-          </div>
-          <h4>Bono por incorporación: </h4>
-          <p>Inspira y Gana Cuando inspiras, también ganas. Invita a más personas a unirse a esta gran oportunidad y recibe un bono f ijo por cada nuevo integrante que forme parte de nuestra comunidad térbol I Inspira. Cada incorporación es una historia que comienza a transformarse gracias a ti. Inspirar a alguien a emprender es sembrar libertad.</p>
-        </div>
-        <div class="picture">
-        <div class="overlay"></div>
-          <Image 
-            src={mWoman} 
-            alt="Hero image" 
-            width={600} 
-            class="card-img" 
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="picture">
-        <div class="overlay"></div>
-          <Image 
-            src={m4} 
-            alt="Hero image" 
-            width={600} 
-            class="card-img" 
-          />
-        </div>
-        <div class="column">
-          <div class="step-label">
-            4
-            <div class="line"></div>
-          </div>
-          <h4>Bono de crecimiento:</h4>
-          <p>Inspira y Crece Inspirar es el primer paso. Formar, el segundo Al construir tu equipo de ventas y ayudarlo a crecer, recibes el 2% de la venta neta comisionable de tu red directa. Esto no es solo un bono: es el resultado de crear una red sólida, activa y comprometida. Cuando tu equipo crece, tú también creces.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column">
-          <div class="step-label">
-            5
-            <div class="line"></div>
-          </div>
-          <h4>Bono de Líder en formación:</h4>
-          <p>El mejor liderazgo es el que inspira a otros a liderar. Cuando una Líder acompaña y forma a nuevas líderes, recibe un bono único por este gran logro. Porque formar líderes es dejar huellas que trascienden generaciones. Inspirar a alguien a liderar su propio negocio es uno de los mayores actos de impacto en la sociedad.</p>
-        </div>
-        <div class="picture">
-        <div class="overlay"></div>
-          <Image 
-            src={m5} 
-            alt="Hero image" 
-            width={600} 
-            class="card-img" 
-          />
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="picture">
-        <div class="overlay"></div>
-          <Image 
-            src={m6} 
-            alt="Hero image" 
-            width={600} 
-            class="card-img" 
-          />
-        </div>
-        <div class="column">
-          <div class="step-label">
-            6
-            <div class="line"></div>
-          </div>
-          <h4>Bono de Liderazgo:</h4>
-          <p>Consolidas tu liderazgo, multiplicas tu impacto. Al convertirte en Líder, guiando, acompañando y desarrollando una red directa fuerte, accedes a un 10% de la venta neta comisionable de toda tu red directa. Tu ejemplo motiva. Tu liderazgo transforma. Y en Térbol - Inspira, celebramos ese camino con reconocimiento y crecimiento.</p>
-        </div>
-      </div>
+        ))
+      }
     </div>
   </div>
 </section>
@@ -143,6 +99,7 @@ import m6 from '../../assets/images/m6.jpg'
     gap: 90px;
     padding-inline: 128px;
   }
+
   .top-label {
     font-family: "Roboto Mono";
     width: 70%;
@@ -156,19 +113,13 @@ import m6 from '../../assets/images/m6.jpg'
     color: var(--grey-300);
   }
 
-h4 {
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.top {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
-  text-align: center;
-}
+  .top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+  }
 
   .content {
     display: flex;
@@ -176,115 +127,21 @@ h4 {
     gap: 64px;
   }
 
-  .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 128px;
-  }
-
-  .column {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .step-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 24px;
-    font-weight: 600;
-  }
-.line {
-    width: 80%;
-    height: 1px;
-    background-color: var(--color-light-gray);
-  }
-
-.picture {
-  border-radius: 6px;
-  overflow: hidden;
-  aspect-ratio: 5/3;
-  position: relative;
-}
-  .overlay {
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, .6) 0%,
-    rgba(0, 0, 0, 0.1) 40%,
-    rgba(0, 0, 0, .0) 100%
-  );
-}
-
-  .card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   @media (max-width: 1200px) {
     .container {
       padding-inline: 64px;
     }
-
-    .row {
-      gap: 96px;
-    }
   }
 
-@media (max-width: 1024px) {
+  @media (max-width: 1024px) {
     .container {
       padding-inline: 3rem;
-    }
-
-    .row {
-      gap: 64px;
-    }
-
-    .column {
-      gap: 16px;
     }
   }
 
   @media (max-width: 768px) {
     .container {
       padding-inline: 2rem;
-    }
-
-    .row {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    .row:nth-child(2) .picture {
-      order: 2;
-    }
-
-    .row:nth-child(2) .column {
-      order: 1;
-    }
-
-    .row:nth-child(4) .picture {
-      order: 2;
-    }
-
-    .row:nth-child(4) .column {
-      order: 1;
-    }
-
-    .row:nth-child(6) .picture {
-      order: 2;
-    }
-
-    .row:nth-child(6) .column {
-      order: 1;
-    }
-
-    .column {
-      gap: 16px;
     }
   }
 
@@ -293,5 +150,4 @@ h4 {
       padding-inline: 24px;
     }
   }
-
 </style>

@@ -1,33 +1,51 @@
 ---
-import Button from '../common/Button.astro'
-import {Image} from 'astro:assets'
-import bannerImg from '../../assets/images/b1.png'
+import Button from "../common/Button.astro";
+import { Image } from "astro:assets";
+import bannerImg from "../../assets/images/b1.png";
+
+const {
+  topLabel = "Únete a nuestro equipo",
+  title = "Inspira tu camino hacia el bienestar",
+  description = "Sumate a una comunidad que cree en tu potencial y forma parte de la red de asesores de térbolI Inspira donde tu crecimiento personal y profesional van de la mano.",
+  secondaryDescription = "Este es tu momento para inspire, crecer y transformar tu vida.",
+  buttonText = "REGISTRARSE COMO PROMOTORA",
+  secondaryButtonText = "REGISTRO PROMOTORA",
+  buttonHref = "https://terbol.com.bo/#",
+  image = bannerImg,
+  imageAlt = "Banner image",
+} = Astro.props;
 ---
 
 <section class="banner section-container">
   <div class="container">
     <div class="banner-container">
-    <div class="content">
-      <div class="title">
-      <div class="top-label">Únete a nuestro equipo</div>
-      <h3>
-Inspira tu camino hacia el bienestar
-</h3>
-<p>Sumate a una comunidad que cree en tu potencial y forma parte de la red de asesores de térbolI Inspira donde tu crecimiento personal y profesional van de la mano. </p>
-<p>Este es tu momento para inspirar, crecer y transformar tu vida.</p>
+      <div class="content">
+        <div class="title">
+          <div class="top-label">{topLabel}</div>
+          <h3 set:html={title} />
+          {description && <p set:html={description} />}
+          {secondaryDescription && <p set:html={secondaryDescription} />}
+        </div>
+        <Button
+          variant="primary"
+          size="md"
+          class="full"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={buttonHref}>{buttonText}</Button
+        >
+        <Button
+          variant="primary"
+          size="sm"
+          class="compact"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={buttonHref}>{secondaryButtonText}</Button
+        >
       </div>
-      <Button variant="primary" size="md" class="full">REGISTRARSE COMO PROMOTORA</Button>
-      <Button variant="primary" size="sm" class="compact">REGISTRO PROMOTORA</Button>
-      <!-- <div>+5491100000000 | contacto@terbolinspira.com</div> -->
-    </div>
-    <div class="picture">
-      <Image 
-        src={bannerImg} 
-        alt="Hero image" 
-        width={700} 
-        class="card-img" 
-      />
-    </div>
+      <div class="picture">
+        <Image src={image} alt={imageAlt} width={700} class="card-img" />
+      </div>
     </div>
   </div>
 </section>
@@ -56,26 +74,24 @@ Inspira tu camino hacia el bienestar
 
   .content {
     display: flex;
-    flex-direction:  column;
+    flex-direction: column;
     align-items: start;
     justify-content: center;
     gap: 32px;
     min-width: 480px;
-    /* width: 50%; */
   }
   .title {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
-.top-label {
+  .top-label {
     font-family: "Roboto Mono";
     font-size: 18px;
     font-weight: 400;
     color: var(--primary-white);
     text-transform: uppercase;
   }
-
 
   @media (max-width: 768px) {
     .content {
@@ -101,15 +117,8 @@ Inspira tu camino hacia el bienestar
       padding: 32px;
     }
 
-    .picture {
-      /* display: none; */
-    }
-
     .compact {
       width: 100%;
     }
   }
-
 </style>
-
-
