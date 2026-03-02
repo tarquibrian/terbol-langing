@@ -1,14 +1,31 @@
 ---
-import logoTerbol from '../../assets/logo.svg'
+// -----------------------------------------------------------------------------
+// Footer.astro
+//
+// Pie de página global con logo de la marca, aviso legal sobre suplementos y
+// derechos reservados. Se reutiliza en la mayoría de las páginas del sitio.
+//
+// -----------------------------------------------------------------------------
+
+import logoTerbol from "../../assets/logo.svg";
 ---
+
 <footer class="section-container">
   <div class="container">
     <div class="top">
       <div class="logo">
-        <img src={logoTerbol.src} width="200" height="33" alt="Logo de Terbol" />
+        <img
+          src={logoTerbol.src}
+          width="200"
+          height="33"
+          alt="Logo de Terbol"
+        />
         <p>Una iniciativa de Térbol</p>
       </div>
-      <p>Los productos mencionados son suplementos dietarios. Antes de consumir cualquier suplemento, consulte a su médico o profesional de la salud.</p>
+      <p>
+        Los productos mencionados son suplementos dietarios. Antes de consumir
+        cualquier suplemento, consulte a su médico o profesional de la salud.
+      </p>
     </div>
     <div class="line"></div>
     <div class="bottom">

@@ -1,4 +1,21 @@
 ---
+// -----------------------------------------------------------------------------
+// Button.astro
+//
+// Componente polimórfico para botones y enlaces estilizados. Si se pasa la
+// propiedad `href`, renderiza un `<a>`; de lo contrario utiliza `<button>`.
+// Soporta variantes de estilo (primaria, secundaria, ghost, etc.) y tamaños.
+//
+// Props:
+//   - variant (string): 'primary' | 'secondary' | 'terciary' | 'outline' | 'ghost'
+//   - size    (string): 'sm' | 'md' | 'lg'
+//   - href    (string): URL; desencadena elemento <a>.
+//   - noIcon  (boolean): oculta el icono de flecha si es verdadero.
+//   - class   (string): clases CSS adicionales.
+//   - ...rest (object): otras propiedades HTML válidas (target, rel, etc.)
+//
+// -----------------------------------------------------------------------------
+
 const { 
   variant = 'primary', 
   size = 'md', 
