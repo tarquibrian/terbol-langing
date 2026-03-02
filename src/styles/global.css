@@ -122,6 +122,10 @@ h2 {
   line-height: 1.1;
 }
 
+.svg-icon-xl {
+  color: var(--color-orange)
+}
+
 @media (max-width: 1024px) {
   .container {
     padding: 96px 48px;
