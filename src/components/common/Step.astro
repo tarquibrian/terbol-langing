@@ -1,7 +1,14 @@
 ---
 import { Image } from "astro:assets";
 
-const { number, title, description, image, imageAlt = "Step image", reverse = false } = Astro.props;
+const {
+  number,
+  title,
+  description,
+  image,
+  imageAlt = "Step image",
+  reverse = false,
+} = Astro.props;
 ---
 
 <div class:list={["row", { reverse }]}>
@@ -15,12 +22,7 @@ const { number, title, description, image, imageAlt = "Step image", reverse = fa
   </div>
   <div class="picture">
     <div class="overlay"></div>
-    <Image
-      src={image}
-      alt={imageAlt}
-      width={600}
-      class="card-img"
-    />
+    <Image src={image} alt={imageAlt} width={600} class="card-img" />
   </div>
 </div>
 
@@ -81,9 +83,9 @@ const { number, title, description, image, imageAlt = "Step image", reverse = fa
     inset: 0;
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, .6) 0%,
+      rgba(0, 0, 0, 0.6) 0%,
       rgba(0, 0, 0, 0.1) 40%,
-      rgba(0, 0, 0, .0) 100%
+      rgba(0, 0, 0, 0) 100%
     );
   }
 
