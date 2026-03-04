@@ -16,32 +16,39 @@
 //
 // -----------------------------------------------------------------------------
 
-const { 
-  variant = 'primary', 
-  size = 'md', 
-  href, 
+const {
+  variant = "primary",
+  size = "md",
+  href,
   noIcon,
-  class: className, 
-  ...rest 
+  class: className,
+  ...rest
 } = Astro.props;
 
 // Lógica Polimórfica: Si hay href es un <a>, sino un <button>
-const Tag = href ? 'a' : 'button';
+const Tag = href ? "a" : "button";
 ---
 
-<Tag 
+<Tag
   href={href}
-  class:list={[
-    'btn', 
-    `btn-${variant}`, 
-    `btn-${size}`, 
-    className
-  ]}
+  class:list={["btn", `btn-${variant}`, `btn-${size}`, className]}
   {...rest}
 >
   <slot />
   <div class={`${noIcon ? "none" : "icon"}`}>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.75"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-arrow-right-icon lucide-arrow-right"
+      ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+    >
   </div>
 </Tag>
 
@@ -92,7 +99,7 @@ const Tag = href ? 'a' : 'button';
     font-weight: 600;
     background-color: #ffffff;
   }
-  
+
   .btn-outline {
     background-color: transparent;
     border-color: currentColor;
@@ -100,7 +107,7 @@ const Tag = href ? 'a' : 'button';
   }
 
   .btn-outline:hover {
-    background-color: rgba(0,0,0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   .btn-ghost {
@@ -108,7 +115,7 @@ const Tag = href ? 'a' : 'button';
     color: var(--color-text);
   }
   .btn-ghost:hover {
-    background-color: rgba(0,0,0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   /* 3. Tamaños */
@@ -118,12 +125,12 @@ const Tag = href ? 'a' : 'button';
     font-size: 0.875rem;
     font-weight: 500;
   }
-  
+
   .btn-md {
     padding: 4px 20px;
     font-size: 18px;
   }
-  
+
   .btn-lg {
     padding: 1rem 2rem;
     font-size: 1.125rem;
