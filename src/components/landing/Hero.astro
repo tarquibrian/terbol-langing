@@ -51,16 +51,23 @@ const {
         target="_blank"
         rel="noopener noreferrer">{buttonText}</Button
       >
-      <Button variant="primary" size="sm" class="compact" href={buttonHref}
-        >{buttonText}</Button
+      <Button
+        variant="primary"
+        size="sm"
+        class="compact"
+        href={buttonHref}
+        target="_blank"
+        rel="noopener noreferrer">{buttonText}</Button
       >
       <div class="features">
-        {features.map((feature: any) => (
-          <div class="feature">
-            <CircleCheck />
-            {feature.text}
-          </div>
-        ))}
+        {
+          features.map((feature: any) => (
+            <div class="feature">
+              <CircleCheck />
+              {feature.text}
+            </div>
+          ))
+        }
       </div>
     </div>
 
