@@ -12,29 +12,30 @@
 //
 // -----------------------------------------------------------------------------
 
-import Button from '../common/Button.astro';
-import logoTerbol from '../../assets/logo.svg'
+import Button from "../common/Button.astro";
+import logoTerbol from "../../assets/logo.svg";
 ---
 
 <nav class="navbar">
   <div class="navbar-container">
     <div class="navbar-content">
-    <div class="logo">         
-      <img src={logoTerbol.src} width="200" height="33" alt="Logo de Terbol" />
-    </div>
-    <Button variant="primary" size="md" class="full">
-      SOY PROMOTORA
-    </Button>
-    <Button variant="primary" size="sm" class="compact">
-      SOY PROMOTORA
-    </Button>
-
+      <div class="logo">
+        <img
+          src={logoTerbol.src}
+          width="200"
+          height="33"
+          alt="Logo de Terbol"
+        />
+      </div>
+      <Button variant="primary" size="md" class="full"> SOY PROMOTORA </Button>
+      <Button variant="primary" size="sm" class="compact">
+        SOY PROMOTORA
+      </Button>
     </div>
   </div>
 </nav>
 
 <style>
-
   .navbar {
     position: fixed;
     background-color: white;
@@ -53,31 +54,41 @@ import logoTerbol from '../../assets/logo.svg'
     display: none;
   }
 
-@media (max-width: 1024px) {
-  .navbar-container {
-    padding-inline: 48px;
+  .logo {
+    width: 200px;
+    height: auto;
   }
-}
 
-
-@media (max-width: 768px) {
-  .navbar-container {
-    padding-inline: 32px;
+  .logo img {
+    width: 100%;
+    height: auto;
   }
-.full {
+
+  @media (max-width: 1024px) {
+    .navbar-container {
+      padding-inline: 48px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar-container {
+      padding-inline: 32px;
+    }
+    .full {
       display: none;
     }
 
     .compact {
       display: flex;
     }
-}
+  }
 
   @media (max-width: 480px) {
-    .navbar-container {
-          padding-inline: 24px;
+    .logo {
+      width: 140px;
     }
-    
+    .navbar-container {
+      padding-inline: 24px;
+    }
   }
 </style>
-
