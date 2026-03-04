@@ -14,6 +14,14 @@
 
 import Button from "../common/Button.astro";
 import logoTerbol from "../../assets/logo.svg";
+
+const {
+  logoAlt = "Logo de Terbol",
+  logoWidth = 200,
+  logoHeight = 33,
+  ctaText = "SOY PROMOTORA",
+  ctaHref = "https://terbol.com.bo/#",
+} = Astro.props;
 ---
 
 <nav class="navbar">
@@ -22,14 +30,28 @@ import logoTerbol from "../../assets/logo.svg";
       <div class="logo">
         <img
           src={logoTerbol.src}
-          width="200"
-          height="33"
-          alt="Logo de Terbol"
+          width={logoWidth}
+          height={logoHeight}
+          alt={logoAlt}
         />
       </div>
-      <Button variant="primary" size="md" class="full"> SOY PROMOTORA </Button>
-      <Button variant="primary" size="sm" class="compact">
-        SOY PROMOTORA
+      <Button
+        variant="primary"
+        size="md"
+        class="full"
+        href={ctaHref}
+        target="_blank"
+        rel="noopener noreferrer">{ctaText}</Button
+      >
+      <Button
+        variant="primary"
+        size="sm"
+        class="compact"
+        href={ctaHref}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {ctaText}
       </Button>
     </div>
   </div>
