@@ -7,60 +7,83 @@
 
 import Step from "../common/Step.astro";
 
-import mMoney2 from "../../assets/images/m-money1.jpg";
-import mTest from "../../assets/images/m-test.jpg";
-import mWoman from "../../assets/images/m-woman.jpg";
-import m4 from "../../assets/images/m4.jpg";
-import m5 from "../../assets/images/m5.jpg";
-import m6 from "../../assets/images/m6.jpg";
+import s1 from "../../assets/images/image15.png";
+import s2 from "../../assets/images/image14.png";
+import s3 from "../../assets/images/image16.png";
+import s4 from "../../assets/images/image18.png";
+import s5 from "../../assets/images/image19.png";
+import s6 from "../../assets/images/image20.png";
 
 const steps = [
   {
     number: 1,
-    title: "Ganancias asesoras de ventas independientes",
-    description:
-      "Tu trabajo tiene valor. Tu pasión también. Cada Asesora de Ventas gana entre el 25% y el 30% de descuento por cada venta realizada. Esto no solo representa ingresos reales: cada venta es una oportunidad de llevar salud, bienestar y energía a más personas. Tú construyes tu cartera de clientes, planificas tus metas y nosotros premiamos tu compromiso con ganancias inmediatas.",
-    image: mMoney2,
+    title: "Ganancia por vender",
+    description: `
+    <b>Tu trabajo tiene valor. Tu pasión también.</b><br>
+    Cada Asesor de Ventas Independiente gana entre el <b>25% y el 30%</b> de descuento por cada venta realizada. Esto no solo representa ingresos reales: cada venta es una oportunidad de llevar salud, bienestar y energía a más personas. <br>
+    Tú construyes tu cartera de clientes, planificas tus metas y nosotros premiamos tu compromiso con ganancias inmediatas.
+    `,
+    image: s1,
     reverse: false,
   },
   {
     number: 2,
-    title: "Varas Inspira +",
-    description:
-      "La clave está en la perseverancia. Realiza pedidos cada mes y recibe bonificaciones e incentivos diferenciados por tu constancia. En térbol I Inspira valoramos a quienes cultivan relaciones duraderas, acompañan a sus clientes y mantienen vivo el vínculo. Tu compromiso merece ser reconocido.",
-    image: mTest,
+    title: "Ganancia por Retener: Inspira+",
+    description: `
+    <b>La clave está en la perseverancia.</b><br>
+    Realiza pedidos cada mes y recibe <b> bonificaciones e incentivos diferenciados </b> por tu constancia.<br>
+    En <b>térbol Inspira</b> valoramos a quienes cultivan relaciones duraderas, acompañan a sus clientes y mantienen vivo el vínculo.
+    Tu compromiso merece ser reconocido.
+    `,
+    image: s2,
     reverse: true,
   },
   {
     number: 3,
-    title: "Bono por incorporación:",
-    description:
-      "Inspira y Gana Cuando inspiras, también ganas. Invita a más personas a unirse a esta gran oportunidad y recibe un bono f ijo por cada nuevo integrante que forme parte de nuestra comunidad térbol I Inspira. Cada incorporación es una historia que comienza a transformarse gracias a ti. Inspirar a alguien a emprender es sembrar libertad.",
-    image: mWoman,
+    title: "Bono por Incorporación: Inspira y Gana",
+    description: `
+    <b>Cuando inspiras, también ganas.</b><br>
+    Invita a más personas a unirse a esta gran oportunidad y recibe <b>un bono fijo por cada nuevo integrante que forme parte de nuestra comunidad térbol Inspira.</b><br>
+    Cada incorporación es una historia que comienza a transformarse gracias a ti.<br>
+    <b>Inspirar a alguien a emprender es sembrar libertad.</b>
+`,
+    image: s3,
     reverse: false,
   },
   {
     number: 4,
-    title: "Bono de crecimiento:",
-    description:
-      "Inspira y Crece Inspirar es el primer paso. Formar, el segundo Al construir tu equipo de ventas y ayudarlo a crecer, recibes el 2% de la venta neta comisionable de tu red directa. Esto no es solo un bono: es el resultado de crear una red sólida, activa y comprometida. Cuando tu equipo crece, tú también creces.",
-    image: m4,
+    title: "Bono de Crecimiento: Inspira y Crece ",
+    description: `
+    <b>Inspirar es el primer paso para crecer.</b><br>
+    Al construir tu equipo de ventas y ayudarlo a crecer, recibes <b>un porcentaje de la venta neta comisionable de tu red directa.</b><br>
+    Esto no es solo un bono: es el resultado de crear una red sólida, activa y comprometida.<br>
+    <b>Cuando tu equipo crece, tú también creces.</b>
+`,
+    image: s4,
     reverse: true,
   },
   {
     number: 5,
-    title: "Bono de Líder en formación:",
-    description:
-      "El mejor liderazgo es el que inspira a otros a liderar. Cuando una Líder acompaña y forma a nuevas líderes, recibe un bono único por este gran logro. Porque formar líderes es dejar huellas que trascienden generaciones. Inspirar a alguien a liderar su propio negocio es uno de los mayores actos de impacto en la sociedad.",
-    image: m5,
+    title: "Bono de Líder en Formación",
+    description: `
+    <b>Tu camino de liderazgo está comenzando.</b><br>
+      Liderar es asumir el compromiso de crecer y, al mismo tiempo, impulsar el crecimiento de tu equipo.<br>
+      Al desarrollar una red estable y mantener una evaluación positiva durante dos meses consecutivos, accedes a un bono especial que reconoce tu avance.
+      Este bono no solo recompensa resultados, es un reflejo del impacto que empiezas a generar en quienes te rodean.
+`,
+    image: s5,
     reverse: false,
   },
   {
     number: 6,
-    title: "Bono de Liderazgo:",
-    description:
-      "Consolidas tu liderazgo, multiplicas tu impacto. Al convertirte en Líder, guiando, acompañando y desarrollando una red directa fuerte, accedes a un 10% de la venta neta comisionable de toda tu red directa. Tu ejemplo motiva. Tu liderazgo transforma. Y en Térbol - Inspira, celebramos ese camino con reconocimiento y crecimiento.",
-    image: m6,
+    title: "Bono de Liderazgo",
+    description: `
+    <b>Consolidas tu liderazgo, multiplicas tu impacto.</b><br>
+    Al convertirte en Líder, guiando, acompañando y desarrollando una red directa y sólida, ganas a <b>un porcentaje en efectivo de la venta neta comisionable de toda tu red directa.</b><br>
+      Tu ejemplo motiva. Tu liderazgo transforma.
+      Y en <b>térbol Inspira</b>, celebramos ese camino con reconocimiento y crecimiento.
+`,
+    image: s6,
     reverse: true,
   },
 ];
@@ -70,10 +93,12 @@ const steps = [
   <div class="container">
     <div class="top">
       <div class="top-label">NUESTRO MODELO DE NEGOCIO</div>
-      <h2>¡Inspírate! Porque hay seis formas de ganar</h2>
+      <h2>Aquí, el esfuerzo se convierte en bienestar <br> para ti y para quienes te rodean.</h2>
+      <!-- <h2>¡Inspírate! Porque hay seis formas de ganar</h2> -->
       <p>
-        <b>En térbol Inspira</b>, creemos que el verdadero progreso nace del
-        reconocimiento. Cada logro se celebra. Cada paso cuenta.
+      <b>¡Inspírate! Porque hay seis formas de ganar</b>
+        <!-- <b>En térbol Inspira</b>, creemos que el verdadero progreso nace del -->
+        <!-- reconocimiento. Cada logro se celebra. Cada paso cuenta. -->
       </p>
     </div>
     <div class="content">
@@ -97,7 +122,7 @@ const steps = [
     display: flex;
     flex-direction: column;
     gap: 90px;
-    padding-inline: 128px;
+    /* padding-inline: 128px; */
   }
 
   .top-label {
@@ -124,7 +149,7 @@ const steps = [
   .content {
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 80px;
   }
 
   @media (max-width: 1200px) {
