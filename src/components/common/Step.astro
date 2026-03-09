@@ -18,7 +18,7 @@ const {
       <div class="line"></div>
     </div>
     <h4 set:html={title} />
-    <p>{description}</p>
+    <p set:html={description} />
   </div>
   <div class="picture">
     <div class="overlay"></div>
@@ -31,6 +31,7 @@ const {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 128px;
+    align-items: center;
   }
 
   .row.reverse .picture {
@@ -74,7 +75,7 @@ const {
   .picture {
     border-radius: 6px;
     overflow: hidden;
-    aspect-ratio: 5/3;
+    aspect-ratio: 6/4;
     position: relative;
   }
 
