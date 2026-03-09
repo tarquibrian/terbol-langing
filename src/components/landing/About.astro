@@ -14,12 +14,14 @@
 //   - features: Array de características a mostrar
 // -----------------------------------------------------------------------------
 
+import { Image } from "astro:assets";
 import Button from "../common/Button.astro";
 import FeatureCard from "../common/FeatureCard.astro";
 import IconPassion from "../icons/IconPassion.astro";
 import IconQuality from "../icons/IconQuality.astro";
 import IconRespect from "../icons/IconRespect.astro";
 import IconPurpose from "../icons/IconPurpose.astro";
+import bg from "../../assets/images/image4.png";
 
 const {
   label = "QUIÉNES SOMOS",
@@ -54,7 +56,16 @@ const {
 ---
 
 <section class="about section-container">
+  
   <div class="container">
+<div class="background">
+<Image
+        src={bg}
+        alt={"Background image"}
+        width={300}
+        class="background-image"
+      />
+  </div>
     <div class="content">
       <div class="top-label">
         <span>{label}</span>
@@ -84,7 +95,17 @@ const {
 </section>
 
 <style>
+  .background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: cover;
+    z-index: 1;
+    transform: translateY(-5%);
+  }
+
   .container {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 64px;
