@@ -1,15 +1,15 @@
 ---
 import Button from "../common/Button.astro";
 import { Image } from "astro:assets";
-import bannerImg from "../../assets/images/b1.png";
+import bannerImg from "../../assets/images/image22.png";
 
 const {
   topLabel = "Únete a nuestro equipo",
   title = "Inspira tu camino hacia el bienestar",
   description = "Sumate a una comunidad que cree en tu potencial y forma parte de la red de asesores de térbolI Inspira donde tu crecimiento personal y profesional van de la mano.",
   secondaryDescription = "Este es tu momento para inspire, crecer y transformar tu vida.",
-  buttonText = "REGISTRARSE COMO PROMOTORA",
-  secondaryButtonText = "REGISTRO PROMOTORA",
+  buttonText = "REGISTRARSE COMO ASESOR DE VENTAS",
+  secondaryButtonText = "REGISTRO ASESOR DE VENTAS",
   buttonHref = "https://terbol.com.bo/#",
   image = bannerImg,
   imageAlt = "Banner image",
@@ -51,6 +51,18 @@ const {
 </section>
 
 <style>
+  .picture {
+    width: 100%;
+    min-width: 500px;
+  }
+
+  .card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+
   .compact {
     display: none;
   }
@@ -70,6 +82,7 @@ const {
     display: flex;
     align-items: center;
     padding: 64px;
+    gap: 16px;
   }
 
   .content {
@@ -99,7 +112,7 @@ const {
     }
     .banner-container {
       flex-direction: column;
-      height: 900px;
+      height: fit-content;
       padding-inline: 48px;
     }
 
@@ -115,10 +128,15 @@ const {
   @media (max-width: 480px) {
     .banner-container {
       padding: 32px;
+      height: fit-content;
     }
 
     .compact {
       width: 100%;
+    }
+
+    .picture {
+    min-width: 400px;
     }
   }
 </style>
