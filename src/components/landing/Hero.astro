@@ -15,22 +15,22 @@
 // -----------------------------------------------------------------------------
 
 import { Image } from "astro:assets";
-import heroImage from "../../assets/images/heroimg.png";
+import heroImage from "../../assets/images/image2.png";
 import Button from "../common/Button.astro";
 import Capsule from "../common/Capsule.astro";
-import CircleCheck from "../icons/CircleCheck.astro";
+// import CircleCheck from "../icons/CircleCheck.astro";
 
 const {
   capsuleText = "Nueva Línea Premium",
   title = "Inspiramos bienestar, transformamos vidas",
-  description = "En un mundo que avanza con velocidad, elegimos el valor del equilibrio. Así nace térbol I Inspira: una invitación a vivir más y vivir mejor, desde la ciencia, la conciencia y la excelencia.",
-  buttonText = "REGISTRARME COMO PROMOTORA",
-  buttonHref = "https://terbol.com.bo/#",
-  features = [
-    { text: "Respaldo científico" },
-    { text: "Alta gama" },
-    { text: "Modelo B2C" },
-  ],
+  description = "En un mundo que avanza con velocidad, elegimos el valor del equilibrio. Así nace <b>térbol I Inspira</b>: una invitación a vivir más y vivir mejor, desde la ciencia, la conciencia y la excelencia.",
+  buttonText = "REGISTRARME COMO ASESOR DE VENTAS",
+  buttonHref = "https://terbol.info/VentaPorCatalogo/QAS/incorporacionwizard",
+  // features = [
+  //   { text: "Respaldo científico" },
+  //   { text: "Alta gama" },
+  //   { text: "Modelo B2C" },
+  // ],
   image = heroImage,
   imageAlt = "Hero image",
 } = Astro.props;
@@ -59,16 +59,16 @@ const {
         target="_blank"
         rel="noopener noreferrer">{buttonText}</Button
       >
-      <div class="features">
-        {
-          features.map((feature: any) => (
-            <div class="feature">
-              <CircleCheck />
-              {feature.text}
-            </div>
-          ))
-        }
-      </div>
+      <!-- <div class="features"> -->
+      <!--   { -->
+      <!--     features.map((feature: any) => ( -->
+      <!--       <div class="feature"> -->
+      <!--         <CircleCheck /> -->
+      <!--         {feature.text} -->
+      <!--       </div> -->
+      <!--     )) -->
+      <!--   } -->
+      <!-- </div> -->
     </div>
 
     <div class="picture">
@@ -103,7 +103,7 @@ const {
   h1 {
     color: var(--text-blue-900);
     font-size: 100px;
-    font-size: clamp(40px, 6vw, 80px);
+    font-size: clamp(40px, 6vw, 72px);
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
@@ -116,8 +116,8 @@ const {
 
   .picture {
     display: flex;
-    width: 502px;
-    height: 446px;
+    width: 552px;
+    height: 486px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
