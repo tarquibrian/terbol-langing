@@ -4,44 +4,40 @@
 // Sección en la landing que lista tres características clave del producto/servicio
 // con icono de check. Usada en la página principal.
 
-import {Image} from 'astro:assets'
-import f1 from '../../assets/images/image10.png'
-import f2 from '../../assets/images/image11.png'
-import f3 from '../../assets/images/image12.png'
-import f4 from '../../assets/images/image13.png'
+import { Image } from "astro:assets";
+import f1 from "../../assets/images/image10.png";
+import f2 from "../../assets/images/image11.png";
+import f3 from "../../assets/images/image12.png";
+import f4 from "../../assets/images/image13.png";
 
 const {
   label = "NUESTRAS FÓRMULAS",
-  title = "Productos con vitaminas y nutracéuticos que hacen la diferencia",
-  description = "Nuestros productos son pensados para personas que valoran su salud y buscan opciones confiables, bien fundamentadas y de calidad superior.",
+  title = "Productos que acompañan tu<br> bienestar desde adentro",
+  description = "Combinamos ciencia, innovación y naturaleza para ofrecer soluciones que te ayudan a verte bien, sentirte bien y vivir mejor. ",
   features = [
-    {
-      image: f2,
-      imageAlt: "Formulaciones diferenciadas",
-      title: "Productos que acompañan tu bienestar desde adentro ",
-      description: "Combinamos ciencia, innovación y naturaleza para ofrecer soluciones que te ayudan a verte bien, sentirte bien y vivir mejor. ",
-    },
     {
       image: f1,
       imageAlt: "Respaldo científico",
       title: "Formulaciones diferenciadas ",
-      description: "Productos desarrollados con criterios técnicos que acompañan un estilo de vida activo. ",
+      description:
+        "Productos desarrollados con criterios técnicos que acompañan un estilo de vida activo. ",
     },
     {
       image: f3,
       imageAlt: "Alta gama",
       title: "Respaldo y evidencia ",
-      description: "Cada fórmula integra ingredientes cuidadosamente seleccionados con estudios y evidencia que sustentan su función real. ",
+      description:
+        "Cada fórmula integra ingredientes cuidadosamente seleccionados con estudios y evidencia que sustentan su función real. ",
     },
-{
+    {
       image: f4,
       imageAlt: "Calidad premium ",
       title: "Calidad premium ",
-      description: "Soluciones creadas para quienes buscan bienestar auténtico, con formulaciones limpias, modernas y de alto estándar. ",
+      description:
+        "Soluciones creadas para quienes buscan bienestar auténtico, con formulaciones limpias, modernas y de alto estándar. ",
     },
   ],
 } = Astro.props;
-
 ---
 
 <section class="features section-container">
@@ -50,29 +46,31 @@ const {
       <div class="title">
         <div class="top-label">
           <span>
-{label} 
+            {label}
           </span>
           <div class="line"></div>
         </div>
-        <h2>{title}</h2>
+        <h2 set:html={title} />
       </div>
       <div class="desc">
         <p>{description}</p>
       </div>
     </div>
     <div class="content">
-      {features.map((feature: any) => (
-        <div class="card">
-          <Image 
-            src={feature.image} 
-            alt={feature.imageAlt} 
-            width={800} 
-            class="card-img" 
-          />
-          <h5>{feature.title}</h5>
-          <p>{feature.description}</p>
-        </div>
-      ))}
+      {
+        features.map((feature: any) => (
+          <div class="card">
+            <Image
+              src={feature.image}
+              alt={feature.imageAlt}
+              width={800}
+              class="card-img"
+            />
+            <h5>{feature.title}</h5>
+            <p>{feature.description}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
@@ -84,20 +82,21 @@ const {
     gap: 48px;
   }
 
-.top-label {
-    font-family: "Roboto Mono";
+  .top-label {
+    font-family: "Roboto";
     width: 60%;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
     text-wrap: nowrap;
     gap: 8px;
     color: var(--grey-300);
+    margin-bottom: 8px;
   }
 
-.top-label .line {
+  .top-label .line {
     width: 100%;
     height: 1px;
     background-color: var(--color-light-gray);
@@ -115,10 +114,10 @@ const {
     flex-direction: column;
     gap: 8px;
   }
-  
+
   .content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
   }
 
@@ -149,14 +148,15 @@ const {
   .card h5 {
     color: white;
     font-size: 24px;
-    font-size: clamp(18px, 3vw, 32px);
+    font-size: clamp(18px, 2.5vw, 28px);
     font-weight: 500;
-    line-height: 120%;
+    line-height: 110%;
   }
 
   .card p {
     font-weight: 400;
     font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   @media (max-width: 1200px) {
