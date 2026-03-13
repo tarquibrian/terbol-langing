@@ -28,12 +28,13 @@ const {
   title = "Tu bienestar es nuestra prioridad",
   description = "Durante más de 40 años, <b>térbol</b> ha cultivado un legado basado en la ciencia, la excelencia y un propósito claro: mejorar la vida de las personas. Hoy, ese mismo espíritu evoluciona con <b>Térbol Inspira</b>, una propuesta creada para acompañarte en un camino de bienestar real.",
   secondaryDescription = "Cada avance, cada innovación y cada producto reflejan nuestra convicción: el equilibrio es la forma más auténtica de transformar la vida.",
-  buttonText = "VER CATÁLOGO",
+  buttonText = "VISITAR TERBOL",
   buttonHref = "https://terbol.com.bo/#",
   features = [
     {
       title: "Pasión",
-      description: "Trabajamos con pasión por la salud y el bienestar de las personas.",
+      description:
+        "Trabajamos con pasión por la salud y el bienestar de las personas.",
       icon: IconPassion,
     },
     {
@@ -56,20 +57,19 @@ const {
 ---
 
 <section class="about section-container">
-  
   <div class="container">
-<div class="background">
-<Image
+    <div class="background">
+      <Image
         src={bg}
         alt={"Background image"}
         width={300}
         class="background-image"
       />
-  </div>
+    </div>
     <div class="content">
       <div class="top-label">
         <span>{label}</span>
-        <div class="line"></div>
+        <!-- <div class="line"></div> -->
       </div>
       <h2>{title}</h2>
       <p set:html={description} />
@@ -84,13 +84,15 @@ const {
       >
     </div>
 
-    <div class="cards-container">
-      {features.map((feature: any) => (
-        <FeatureCard title={feature.title} description={feature.description}>
-          <feature.icon slot="icon" />
-        </FeatureCard>
-      ))}
-    </div>
+    <!-- <div class="cards-container">
+      {
+        features.map((feature: any) => (
+          <FeatureCard title={feature.title} description={feature.description}>
+            <feature.icon slot="icon" />
+          </FeatureCard>
+        ))
+      }
+    </div> -->
   </div>
 </section>
 
@@ -101,15 +103,16 @@ const {
     right: 0;
     object-fit: cover;
     z-index: 1;
-    transform: translateY(-5%);
+    transform: translateY(-15%);
   }
 
   .container {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 64px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    padding-block: 120px;
   }
 
   .top-label {
@@ -134,8 +137,11 @@ const {
   .content {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
     gap: 24px;
+    max-width: 780px;
+    text-align: center;
   }
 
   .cards-container {
