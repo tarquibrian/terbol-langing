@@ -10,22 +10,22 @@
 import Button from "../common/Button.astro";
 import ProductCard from "../common/ProductCard.astro";
 
-import imgProduct1 from "../../assets/images/image6.png";
-import imgProduct2 from "../../assets/images/image7.png";
-import imgProduct3 from "../../assets/images/image8.png";
+import imgProduct1 from "../../assets/images/product1.png";
+import imgProduct2 from "../../assets/images/product2.png";
+import imgProduct3 from "../../assets/images/product3.png";
 
 const products = [
   {
     label: "SUPLEMENTOS",
-    image: imgProduct1,
-    title: "OVA OVA ACTIVE X 250GR",
+    image: imgProduct2,
+    title: "OVA OVA ACTIVE",
     description: "Ayuda a mejorar la firmeza y elasticidad de la piel, cabello y uñas.",
     price: "XX Bs.",
     // href: "https://terbol.com.bo/#",
   },
   {
     label: "VITAMINAS",
-    image: imgProduct2,
+    image: imgProduct1,
     title: "COLLAGEN CREAM",
     description: "Atenúa manchas y ayuda a lograr un tono más uniforme.",
     price: "XX Bs.",
@@ -34,7 +34,7 @@ const products = [
   {
     label: "SUPLEMENTOS",
     image: imgProduct3,
-    title: "OVA OVA FLEX X 30 STICK",
+    title: "OVA OVA FLEX",
     description: "Mantenimiento de los huesos en condiciones normales.",
     price: "XX Bs.",
     // href: "https://terbol.com.bo/#",
@@ -51,7 +51,7 @@ const products = [
       ))}
     </div>
     <Button
-      variant="terciary"
+      variant="secondary"
       size="sm"
       href="https://terbol.com.bo/#"
       target="_blank"
@@ -69,7 +69,7 @@ const products = [
     gap: 32px;
   }
   .top-label {
-    font-family: "Roboto Mono";
+    font-family: "Roboto";
     width: 70%;
     font-size: 18px;
     font-weight: 400;
