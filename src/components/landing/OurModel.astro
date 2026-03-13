@@ -93,13 +93,11 @@ const steps = [
   <div class="container">
     <div class="top">
       <div class="top-label">NUESTRO MODELO DE NEGOCIO</div>
-      <h2>Aquí, el esfuerzo se convierte en bienestar <br> para ti y para quienes te rodean.</h2>
-      <!-- <h2>¡Inspírate! Porque hay seis formas de ganar</h2> -->
-      <p>
-      <b>¡Inspírate! Porque hay seis formas de ganar</b>
-        <!-- <b>En térbol Inspira</b>, creemos que el verdadero progreso nace del -->
-        <!-- reconocimiento. Cada logro se celebra. Cada paso cuenta. -->
-      </p>
+      <h2>
+        Aquí, el esfuerzo se convierte en bienestar <br /> para ti y para quienes
+        te rodean.
+      </h2>
+      <p>¡Inspírate! Porque hay seis formas de ganar</p>
     </div>
     <div class="content">
       {
@@ -126,10 +124,10 @@ const steps = [
   }
 
   .top-label {
-    font-family: "Roboto Mono";
+    font-family: "Roboto";
     width: 70%;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,6 +142,18 @@ const steps = [
     gap: 16px;
     align-items: center;
     text-align: center;
+  }
+
+  .top h2 {
+    font-weight: 600;
+    line-height: 110%;
+  }
+
+  .top p {
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 600;
+    color: var(--grey-900);
+    margin-top: 16px;
   }
 
   .content {
